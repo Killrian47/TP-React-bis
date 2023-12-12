@@ -5,6 +5,7 @@ import Categories from './page/Categories.jsx';
 import './App.css'
 import Recipe from './page/Recipe.jsx';
 import Ingredient from './page/Ingredient.jsx';
+import MealDetail from './page/MealDetail.jsx';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/categories' element={<Categories />} />
           <Route path='/origins-recipes' element={<Recipe />} />
           <Route path='/ingredients' element={<Ingredient />} />
+          <Route path='/meal/detail/:id' element={<MealDetail />} />
         </Routes>
       </BrowserRouter>
     </>

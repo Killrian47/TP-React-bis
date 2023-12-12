@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { Link } from "react-router-dom";
 
 const MealsPage = () => {
 
@@ -21,7 +22,10 @@ const MealsPage = () => {
                     <>
                         {meals.meals.map((meal) => {
                             return (
-                                <p className='p-2 m-3'><strong>{meal.strMeal}</strong></p>
+                                <div className='p-2 m-3'>
+                                    <p><strong>{meal.strMeal}</strong></p>
+                                    <Link to={`/meal/detail/${meal.idMeal}`}>Voir la recette</Link>
+                                </div>
                             )
                         })}
                     </>
