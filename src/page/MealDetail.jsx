@@ -5,25 +5,26 @@ import Header from "../component/Header";
 const MealDetail = () => {
     let { id } = useParams();
     const [oneMeal, setOneMeal] = useState(null);
-    //let ingredientsForRecipe = [];
+    //let ingredientsForRecipe = null;
 
     useEffect(() => {
         (async () => {
             const oneMealResponse = await fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id)
             const oneMealResponseData = await oneMealResponse.json();
 
-            setOneMeal(await oneMealResponseData.meals[0]);
-
             /*let index = 1;
-            for await (ingredientsForRecipe of oneMeal) {
-                ingredientsForRecipe.push(oneMeal.strIngredient + index);
-                console.log(await ingredientsForRecipe);
+            for await (ingredientsForRecipe of stream) {
+                console.log(ingredientsForRecipe);
                 index++
             }*/
+
+            setOneMeal(await oneMealResponseData.meals[0]);
+
+
         })();
     }, [])
 
-    console.log(oneMeal);
+    //console.log(oneMeal);
 
     return (
         <>
